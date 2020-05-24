@@ -4,8 +4,10 @@ import 'package:shop/ui/screens/products_details_screen.dart';
 class ProductItem extends StatelessWidget {
   final String imageUrl;
   final String title;
+  final String id;
 
-  const ProductItem({Key key, this.imageUrl, this.title}) : super(key: key);
+  const ProductItem({Key key, this.imageUrl, this.title, this.id})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -13,8 +15,11 @@ class ProductItem extends StatelessWidget {
       child: GridTile(
         child: InkWell(
           onTap: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => ProductDetailsScreen(title: title)));
+            Navigator.pushNamed(
+              context,
+              ProductDetailsScreen.routeName,
+              arguments: id,
+            );
           },
           child: Image.network(
             imageUrl,

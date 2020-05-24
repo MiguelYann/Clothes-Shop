@@ -21,6 +21,7 @@ class GridProduct extends StatelessWidget {
             crossAxisCount: 2, childAspectRatio: 1.2, mainAxisSpacing: 20),
         itemBuilder: (context, index) {
           return ProductItem(
+            id: products[index].productId,
             imageUrl: products[index].productImage,
             title: products[index].title,
           );
