@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop/data/provider/products.dart';
 import 'package:shop/ui/screens/products_overview_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,8 +12,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ProductOverviewScreen(),
+    return ChangeNotifierProvider(
+      create: (ctx) => Products(),
+          child: MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.brown,
+          accentColor: Colors.cyan,
+          appBarTheme: AppBarTheme(
+            color: Colors.brown
+          )
+        ),
+        home: ProductOverviewScreen(),
+      ),
     );
   }
 }
