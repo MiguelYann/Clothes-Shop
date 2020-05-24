@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/ui/screens/products_overview_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,8 +10,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: Text("Hello")),
+    return MaterialApp(
+      home: ProductOverviewScreen(),
     );
   }
 }
