@@ -6,7 +6,7 @@ class Products with ChangeNotifier {
   List<Product> _items = dummyProducts;
 
   List<Product> get items {
-      return [...items];
+      return [..._items];
   }
 
   void addProduct() {
